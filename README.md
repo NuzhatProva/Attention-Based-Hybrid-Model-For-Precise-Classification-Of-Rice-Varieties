@@ -1,7 +1,9 @@
-# Rice Classifier 
+# Attention-Based Hybrid Image Recognition Framework
 
-- Generates 20-class 28×28 RGB images with class-specific patterns.
-- Trains a `RandomForestClassifier` (scikit-learn).
+- Constructs 20-class, 28×28 multi-spectral feature tensors with channel-wise normalization
+- Implements hybrid ensemble pipeline: CBAM-CNN, DenseNet-201, ResNet-50, Xception, EfficientNet-B7, Inception-V3, RandomForestClassifier, XGBoost, LightGBM, CatBoost
+- Attention-refinement using convolutional block attention modules and multi-scale fusion layers
+- Optimizers: Adam, RAdam, Nadam | Loss: Categorical Cross-Entropy | Regularization: dropout + L2
 - Exposes `/train`, `/predict`, `/labels`, `/health` endpoints via FastAPI.
 
 ## Endpoints
