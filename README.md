@@ -1,14 +1,13 @@
-# Rice Classifier (Render-ready)
+# Rice Classifier 
 
-This is a lightweight service for training and serving a classifier on a dataset, suitable for Render (CPU).
-- Generates 20-class 28×28 RGB images with simple, class-specific patterns.
-- Trains a small `RandomForestClassifier` (scikit-learn).
+- Generates 20-class 28×28 RGB images with class-specific patterns.
+- Trains a `RandomForestClassifier` (scikit-learn).
 - Exposes `/train`, `/predict`, `/labels`, `/health` endpoints via FastAPI.
 
 ## Endpoints
 - `GET /health` → status
 - `GET /labels` → current (or default) class labels
-- `POST /train` → (re)generate the dataset and train a fresh model
+- `POST /train` → (re)generate the dataset and train model
   - Query params: `n_classes` (2–20), `samples_per_class` (5–200), `image_size` (16–64), `test_size` (0.1–0.5)
 - `POST /predict` → multipart upload of an image (`file`); returns predicted class + probabilities
 
